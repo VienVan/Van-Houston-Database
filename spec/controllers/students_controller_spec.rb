@@ -49,7 +49,7 @@ describe  StudentsController do
 
               context "failure" do
                     it  "redirects to 'new_student_path' when create fails" do
-                        post :create, student: {first_name: "blah", last_name: "blah", email: "12312", current_school: "blah", grade_level: 1}
+                        post :create, student: {first_name: "nil", last_name: "nil", email: "nil", current_school: "nil", grade_level: nil}
                         expect(response).to redirect_to(new_student_path)
                     end
               end

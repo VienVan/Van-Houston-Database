@@ -3,7 +3,7 @@ FactoryGirl.define  do
                     first_name "John"
                     last_name  "Doe"
                     grade_level "1"
-                    email "83270492832"
+                    email "asdas@asdasd"
                     current_school "Young Blood"
             end
 end

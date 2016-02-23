@@ -35,29 +35,11 @@ describe  UsersController do
 
           describe  "POST #create" do
 
-              context "password is invalid" do
-                    it  "renders page with error" do
-                        user = create(:user)
-                        post :create, session: {email: user.email, password: 'invalid'}
-                        expect(response).to render_template(:new)
-                        expect(flash[:notice]).to match(/^Email and password do not match/)
-                    end
-              end
-
-              context "password is valid" do
-                    it  "logs user in and redirects to '/users/index'" do
-                        user = create(:user)
-                        post :create, session: {email: user.email, password: user.password}
-                        expect(response).to redirect_to '/users/index'
-                        expect(controller.current_user).to eq user
-                    end
-              end
-
               context "success" do
                     it  "creates a new user" do
-                        users_count = users.count
+                        users_count = User.count
                         post :create, user: {username: "blah", email: "blah", password: "blah"}
-                        expect(users.count).to eq(users_count + 1)
+                        expect(User.count).to eq(users_count + 1)
                     end
 
                     it  "redirects to 'user_path' after successful create" do
