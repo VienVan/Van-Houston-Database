@@ -8,5 +8,6 @@ describe Student do
         it {should validate_presence_of(:phone)}
         it {should validate_presence_of(:photo)}
         it {should validate_presence_of(:current_school)}
+        it {should have_many(:teacher_students)}
 
 end
