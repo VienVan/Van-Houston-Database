@@ -36,12 +36,12 @@ describe  StudentsController do
               context "success" do
                     it  "adds new student" do
                         student_count = Student.count
-                        post :create, student: {first_name: "blah", last_name: "blah", phone: 12312, current_school: "blah", grade_level: 1}
+                        post :create, student: {first_name: "blah", last_name: "blah", email: "12312", current_school: "blah", grade_level: 1}
                         expect(Student.count).to eq(student_count + 1)
                     end
 
                     it  "redirects to 'student_path' after successful create" do
-                        post :create, student: {first_name: "blah", last_name: "blah", phone: 12312, current_school: "blah", grade_level: 1}
+                        post :create, student: {first_name: "blah", last_name: "blah", email: "12312", current_school: "blah", grade_level: 1}
                         expect(response.status).to be(302)
                         expect(response.location).to match(/\/students\/\d+/)
                     end
@@ -49,7 +49,7 @@ describe  StudentsController do
 
               context "failure" do
                     it  "redirects to 'new_student_path' when create fails" do
-                        post :create, student: {first_name: "blah", last_name: "blah", phone: 12312, current_school: "blah", grade_level: 1}
+                        post :create, student: {first_name: "blah", last_name: "blah", email: "12312", current_school: "blah", grade_level: 1}
                         expect(response).to redirect_to(new_student_path)
                     end
               end

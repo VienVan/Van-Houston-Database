@@ -52,7 +52,7 @@ describe  UsersController do
                         expect(controller.current_user).to eq user
                     end
               end
-              
+
               context "success" do
                     it  "creates a new user" do
                         users_count = users.count
