@@ -30,6 +30,8 @@ gem 'awesome_print'
 
 gem 'carrierwave'
 
+gem 'mini_magick'
+
 
 
 # Use Unicorn as the app server
