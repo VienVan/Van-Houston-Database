@@ -13,3 +13,190 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  padding-top: 40px;
+}
+/********************************Imported css ****************/
+
+
+@media (max-width: 500px) {
+    body {
+        background: white;
+    }
+    .logo {
+        text-align: center;
+    }
+    .header {
+        display: none;
+    }
+    .successful-quote {
+       margin-top: 50px;
+    }
+}
+
+.header {
+    padding-top: 40px;
+    height: 700px;
+    position: relative;
+}
+
+.logo {
+    padding-top: 20px;
+    padding-right: 20px;
+    float: left;
+
+}
+
+
+
+
+
+.school-name {
+    padding: 40px 120px 40px 0;
+    margin-left: 80px;
+
+
+}
+.school-name > h1 {
+    font-size: 75px;
+    color: #002664;
+}
+
+.column-center {
+    text-align: center;
+    padding: 30px;
+}
+
+#about {
+    background: rgba(255, 255, 255, .6);
+    padding: 60px;
+
+}
+.about-header {
+    text-align: center;
+    font-size: 70px;
+}
+.about-body {
+    padding: 30px;
+}
+.about-body > h2  {
+    text-align: center;
+    font-family: Quicksand;
+    font-weight: bolder;
+}
+
+.about-body > p {
+    text-align: justify;
+    line-height: 2.5;
+    font-family: Quicksand;
+    font-size: 20px;
+}
+
+.vanhouston-quotes {
+    color: white;
+    margin: -60px 0 0 20px;
+    font-family: Raleway;
+}
+
+.vanhouston-quotes h4 {
+    font-size: 25px;
+}
+.limit-quote {
+    position: relative;
+    margin: 150px auto 0 auto;
+    text-align: center;
+    color: white;
+}
+.limit-quote .h2 {
+    font-size: 60px;
+    font-family: Lato;
+
+}
+.ivy-league {
+    font-weight: bolder;
+}
+.red-text {
+    color: #BB133E;
+}
+
+.blue-text {
+    color: #002664;
+}
+.enroll-btn {
+    text-align: center;
+    padding: 50px;
+}
+
+.btn-enroll {
+    font-size: 50px;
+    border: 2px solid white;
+    font-family: Quicksand;
+    font-weight: 100;
+    background: none;
+    color: white;
+}
+
+.site-header {
+    padding-top: 50px;
+}
+
+.successful-quote {
+    height: 100vh;
+    width: auto;
+    text-align: center;
+}
+
+blockquote {
+    padding: 100px 0 100px 0;
+    margin: 150px 0 150px 0;
+    color: rgba(100, 100, 100, 1);
+    font-size: 48px;
+    font-family: Raleway;
+    font-weight: bolder;
+
+
+}
+.one-heart {
+    font-family: Tangerine;
+    font-weight: 100;
+    font-size: 80px;
+}
+#whyUs {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url('http://www.quotationof.com/images/question-mark-quotes-4.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    padding: 80px;
+}
+.simple {
+    font-size: 30px;
+    font-weight: bolder;
+
+}
+.why-us {
+    font-family: Quicksand;
+    color: white;
+    padding: 20px;
+    font-size: 70px;
+
+}
+.why-body {
+    color: white;
+    padding: 0 60px 0 60px;
+    font-size: 20px;
+    line-height: 2.5;
+    font-family: Lato;
+    text-align: justify;
+
+}
+.move-right {
+    text-align: right;
+}
+.team-font {
+    font-family: Lato;
+}
+.column-center h2 {
+    font-weight: 800;
+    font-size: 40px;
+}

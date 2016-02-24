@@ -43,8 +43,8 @@
           </div>
           </div>
       <div class='col-lg-6 photo'>
-  
-        <%= image_tag @student.photo.url %>
+
+        <%= image_tag @student.photo_url if @student.photo?%>
 
       </div>
     </div>
@@ -54,3 +54,4 @@
 
   <%#= link_to "Edit", -%>
   <%= link_to "Edit", edit_student_path(@student), :class=>"btn btn-success"%>
+  

@@ -5,4 +5,19 @@
 <%= link_to user.email, user%><br />
 <% end %>
 
+  <%#= link_to "New Teacher", "/users/new"-%>
+
+  <%= link_to "Signin", "#my-modal", :class => "btn", "data-toggle" => "modal" %>
+<div class="modal hide fade" id="my-modal" title="My modal">
+  <div class="modal-header">
+    <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
+    <h3 id="myModalLabel">Modal header</h3>
+  </div>
+  <div class="modal-body">
+    
+  </div>
+  <div class="modal-footer">
+    <button aria-hidden="true" class="btn" data-dismiss="modal">Close</button>
+  </div>
+</div>
 <%#= render 'signin' -%>
