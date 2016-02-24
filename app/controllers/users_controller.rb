@@ -15,6 +15,7 @@ class UsersController < ApplicationController
           @user = User.new(user_params)
           if  @user.save
               login(@user)
+              p "vien"
               redirect_to user_path(@user)
           else
               redirect_to new_user_path
@@ -30,6 +31,13 @@ class UsersController < ApplicationController
           update_params = params.require(:user).permit(:email, :password)
           @user.update_attributes(update_params)
           redirect_to user_path(@user)
+      end
+
+      def destroy
+          p "vien is awesome"
+          p @current_user
+          @current_user = session[:user_id] = nil
+          redirect_to "sign-in"
       end
 
       private
