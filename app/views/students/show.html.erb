@@ -1,1 +1,54 @@
-<h1><%= @student.first_name%></h1>
+<div class='container'>
+  <div class='row name'>
+    <div class='col-lg-12'>
+        <h3><%=@student.first_name + ' ' + @student.last_name%></h3>
+    </div>
+  </div>
+      <div class='row'>
+        <div class='col-lg-6'>
+            <div class='container'>
+                <div class='row'>
+                    <div class='col-md-3'>
+                          <p>Parent's Name: </p>
+                    </div>
+                    <div class='col-md-9'>
+                          <p><%=@student.parent_first_name + ' ' + @student.parent_last_name%></p>
+                    </div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-3'>
+                          <p>Current School: </p>
+                    </div>
+                    <div class='col-md-9'>
+                          <p><%=@student.current_school%></p>
+                    </div>
+              </div>
+              <div class='row'>
+                    <div class='col-md-3'>
+                          <p>Email: </p>
+                    </div>
+                    <div class='col-md-9'>
+                          <p><%=@student.email%></p>
+                    </div>
+              </div>
+              <div class='row'>
+                    <div class='col-md-3'>
+                          <p>Grade Level: </p>
+                    </div>
+                    <div class='col-md-9'>
+                          <p><%=@student.grade_level%></p>
+                    </div>
+              </div>
+
+          </div>
+          </div>
+      <div class='col-lg-6 photo'>
+        PHOTO GOES HERE
+      </div>
+    </div>
+
+</div>
+</div>
+
+  <%#= link_to "Edit", -%>
+  <%= link_to "Edit", edit_student_path(@student), :class=>"btn btn-success"%>

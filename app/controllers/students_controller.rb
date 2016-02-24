@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
       before_action :confirm_login, :except => :new
+      
       def index
           @students = Student.all
       end

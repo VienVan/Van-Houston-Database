@@ -1,2 +1,8 @@
 <h1>User count is <%= User.count %></h1>
 <h1>Student count is <%= Student.count %></h1>
+
+<% @users.each do |user| %>
+<%= link_to user.email, user%><br />
+<% end %>
+
+<%#= render 'signin' -%>

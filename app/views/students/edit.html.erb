@@ -1,0 +1,7 @@
+<h1>edit page</h1>
+
+<%= form_for @student do |f| %>
+<%= f.text_field :email, placeholder: "Email" %>
+<%= f.number_field :grade_level, placeholder: "Grade Level"<%></%>
+<%= f.submit "Update" %>
+<% end %>

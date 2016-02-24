@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
       def index
           @users = User.all
+          @user = current_user
       end
 
       def show
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
           @user = User.new(user_params)
           if  @user.save
               login(@user)
-              p "vien"
+              flash[:notice] = "Successfully loggedin".html_safe
               redirect_to user_path(@user)
           else
               redirect_to new_user_path

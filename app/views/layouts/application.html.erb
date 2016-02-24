@@ -2,14 +2,44 @@
 <html>
 <head>
   <title>VanHoustonApp</title>
-  <!-- Latest compiled and minified CSS -->
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<h1 class='well'>Holla'</h1>
+<div class='navbar navbar-default navbar-transparent'>
+        <div class='container'>
+                <a href='/' class='navbar-brand'>Van Houston Academy</a>
+                <button class = 'navbar-toggle' data-toggle = 'collapse' data-target= '.navHeaderCollapse'>
+                    <span class = 'icon-bar'></span>
+                    <span class = 'icon-bar'></span>
+                    <span class = 'icon-bar'></span>
+                </button>
+                <div class = 'collapse navbar-collapse navHeaderCollapse'>
+                    <div id="myScrollspy">
+                            <ul class = 'nav navbar-nav navbar-right'>
+                                    <li><%= link_to "Home", "/"%></li>
+                                    <% if !current_user %>
+                                    <li><%= link_to "Enroll", '/students/new'%></li>
+                                    <li><%= link_to "Sign In", "/sign-in"%></li>
+                                    <li><%= link_to "New Teacher", "/users/new"%></li>
+                                    <% end %>
+                                    <% if current_user %>
+                                    <li><%= link_to "Add Students", '/students/new'%></li>
+                                    <li><%= link_to "All Students", '/students'%></li>
+
+
+                                    <% end %>
+
+
+
+                            </ul>
+                    </div>
+                </div>
+        </div>
+</div>
 
 <%= yield %>
 
