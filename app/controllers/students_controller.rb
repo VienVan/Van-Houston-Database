@@ -1,6 +1,6 @@
 class StudentsController < ApplicationController
       before_action :confirm_login, :except => :new
-      
+
       def index
           @students = Student.all
       end
@@ -28,13 +28,13 @@ class StudentsController < ApplicationController
 
       def update
           @student = Student.find(params[:id])
-          update_params = params.require(:student).permit(:email, :grade_level, :current_school)
+          update_params = params.require(:student).permit(:email, :grade_level, :current_school, :photo)
           @student.update_attributes(update_params)
           redirect_to student_path(@student)
       end
 
       private
       def student_params
-          student_params = params.require(:student).permit(:first_name, :last_name, :email, :parent_first_name, :parent_last_name, :phone, :current_school, :grade_level)
+          student_params = params.require(:student).permit(:first_name, :last_name, :email, :parent_first_name, :parent_last_name, :photo, :current_school, :grade_level)
       end
 end

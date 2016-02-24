@@ -6,5 +6,6 @@ class Student < ActiveRecord::Base
       validates_presence_of :email
       validates_presence_of :current_school
       validates_presence_of :grade_level
+      mount_uploader :photo, AvatarUploader
 
 end
