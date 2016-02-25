@@ -8,4 +8,8 @@ class Student < ActiveRecord::Base
       validates_presence_of :grade_level
       mount_uploader :photo, AvatarUploader
 
+      def self.search(query)
+          where("last_name like ?", "%#{query}%") 
+        end
+
 end

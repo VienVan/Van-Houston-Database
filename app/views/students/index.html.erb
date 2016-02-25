@@ -1,1 +1,14 @@
-<h1>vien</h1>
+
+<div class='student-show-page'>
+
+
+
+<% @students.each do |student| %>
+<a href='/students/<%= student.id%>'><%= student.first_name + ' ' + student.last_name %></a><br />
+<% end %>
+</div>
+
+<%= form_tag(students_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+<%= submit_tag "Search" %>
+<% end %>

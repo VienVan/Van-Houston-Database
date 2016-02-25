@@ -4,6 +4,8 @@ class UsersController < ApplicationController
 
       def index
           @users = User.all
+
+          
           @user = User.new
       end
 
@@ -38,7 +40,6 @@ class UsersController < ApplicationController
       end
 
       def destroy
-          p "vien is awesome"
           p @current_user
           @current_user = session[:user_id] = nil
           redirect_to "sign-in"

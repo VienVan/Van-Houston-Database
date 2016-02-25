@@ -1,13 +1,15 @@
 <h1>User count is <%= User.count %></h1>
 <h1>Student count is <%= Student.count %></h1>
 
+
+
 <% @users.each do |user| %>
 <%= link_to user.email, user%><br />
 <% end %>
 
   <%= link_to "New Teacher", "/users/new"%>
   <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#sign-in">
-  Sign Up 
+  Sign Up
   </button>
   <div class="modal fade" id='sign-in' tabindex="-1" role="dialog">
     <div class="modal-dialog">
