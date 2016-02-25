@@ -1,9 +1,16 @@
-<%= @user.email %>
-<% if flash[:notice] %>
-<%= flash[:notice] %>
-<%end %>
-<% if current_user %>
-<%= link_to "Log out", '/sessions', method: :delete %>
-<% else %>
-<%= link_to "Login", sign_in_path %>
-<% end %>
+<div class='container user-show-page'>
+
+    <%= @user.email %>
+    <% if flash[:notice] %>
+    <%= flash[:notice] %>
+    <%end %>
+    <% if current_user %>
+    <%= link_to "Log out", '/sessions', method: :delete %>
+    <% else %>
+    <%= link_to "Login", sign_in_path %>
+    <% end %>
+
+    <% @user.students.each do |student| %>
+    <%= student.email %>
+    <% end %>
+</div>

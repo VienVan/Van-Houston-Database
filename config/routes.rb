@@ -5,5 +5,5 @@ Rails.application.routes.draw do
       delete "/sessions", to: "sessions#destroy"
       resources :users
       resources :students
-      resources :teacher_students
+      post "users/:user_id/students" => "teacher_students#create", as: "favorite"
 end

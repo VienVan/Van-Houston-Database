@@ -1,15 +1,84 @@
 <h1>Add New Students</h1>
 
-      <%= form_for(@student, :html => { :class => "form-control" } )do |f| %>
-      <%= f.text_field :first_name, placeholder: "First Name"%>
-      <%= f.text_field :last_name, placeholder: "last Name"%>
-      <%= f.text_field :parent_first_name, placeholder: "Parent's First Name"%>
-      <%= f.text_field :parent_last_name, placeholder: "Parent's Last Name"%>
-      <%= f.text_field :email, placeholder: "Email"%>
-      <%= f.text_field :current_school, placeholder: "Current School"%>
-      <%= f.number_field :grade_level, placeholder: "Grade"%> <%#= I want this to drop down -%>
-      <%= f.file_field :photo, placeholder: "Photo"%>
-      <div class='form-actions'>
-        <%= f.submit "Enroll" %>
-      </div>
-      <% end %>
+      <%= form_for @student do |f| %>
+      <div class='container'>
+
+            <div class='row'>
+                <div class='col-md-2'>
+                  <%= f.label :first_name%>:
+                </div>
+
+                <div class='col-md-10'>
+                      <%= f.text_field :first_name%><br />
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-2'>
+                      <%= f.label :last_name%>:
+                </div>
+                <div class='col-md-10'>
+                      <%= f.text_field :last_name%><br />
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-2'>
+                    <%= f.label :parent_first_name%>:
+                </div>
+                <div class='col-md-10'>
+                    <%= f.text_field :parent_first_name%><br />
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-2'>
+                    <%= f.label :parent_last_name%>:
+                </div>
+                <div class='col-md-10'>
+                    <%= f.text_field :parent_last_name%><br />
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-2'>
+                    <%= f.label :email%>:
+                </div>
+                <div class='col-md-10'>
+                    <%= f.text_field :email%><br />
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-2'>
+                    <%= f.label :current_school%>:
+
+
+                </div>
+                <div class='col-md-10'>
+                    <%= f.text_field :current_school%><br />
+                </div>
+            </div>
+            <div class='row'>
+                <div class='col-md-2'>
+                    <%= f.label :grade_level%>:
+                </div>
+                <div class='col-md-10'>
+                    <%= f.number_field :grade_level%><br />
+                </div>
+            </div>
+            <%= f.label :photo%>
+            <%= f.file_field :photo%>
+            <div class='form-actions'>
+              <%= f.submit "Enroll" %>
+            </div>
+            <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
