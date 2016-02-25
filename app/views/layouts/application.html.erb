@@ -30,12 +30,15 @@
                                     <li><%= link_to "Home", "/"%></li>
                                     <% if !current_user %>
                                     <li><%= link_to "Enroll", '/students/new'%></li>
-                                    <li><%= link_to "Sign In", "/sign-in"%></li>
+                                    <li><%= link_to "Log In", "/sign-in"%></li>
                                     <% end %>
                                     <% if current_user %>
                                     <li><%= link_to "Add Students", '/students/new'%></li>
                                     <li><%= link_to "All Students", '/students'%></li>
                                     <li><%= link_to "Teacher's Access", '/users'%></li>
+                                    <li><%= link_to "Log out", '/sessions', method: :delete %></li>
+
+
 
                                     <% end %>
 
@@ -47,6 +50,7 @@
         </div>
 </div>
 <%= yield %>
+
 
 
 <!-- Latest compiled and minified JS -->

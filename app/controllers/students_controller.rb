@@ -3,11 +3,12 @@ class StudentsController < ApplicationController
 
       def index
           @students = Student.all
+          @student = Student.new
           if params[:search]
-              @students = Student.search(params[:search]).order("created_at DESC")
+              @students = Student.search(params[:search]).order("first_name DESC")
           else
-              @students = Student.order("created_at DESC")
-  end
+              @students = Student.order("first_name DESC")
+          end
       end
 
       def show
@@ -21,7 +22,11 @@ class StudentsController < ApplicationController
       def create
           @student = Student.new(student_params)
           if  @student.save
-              redirect_to student_path(@student)
+              if current_user
+                redirect_to students_path
+              else
+                redirect_to '/'
+              end
           else
               redirect_to new_student_path
           end
@@ -35,7 +40,7 @@ class StudentsController < ApplicationController
           @student = Student.find(params[:id])
           update_params = params.require(:student).permit(:email, :grade_level, :current_school, :photo, :student_id)
           @student.update_attributes(update_params)
-          redirect_to student_path(@student)
+          redirect_to students_path
       end
 
       private

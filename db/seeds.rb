@@ -5,3 +5,16 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+require 'ffaker'
+
+10.times do
+     Student.create(
+        email: FFaker::Internet.email,
+        first_name: FFaker::Name.first_name,
+        last_name: FFaker::Name.last_name,
+        parent_first_name: FFaker::Name.first_name,
+        parent_last_name: FFaker::Name.last_name,
+        current_school: FFaker::Name.name,
+      
+      )
+end

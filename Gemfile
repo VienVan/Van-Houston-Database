@@ -32,6 +32,8 @@ gem 'carrierwave'
 
 gem 'mini_magick'
 
+gem 'social-share-button', '~> 0.1.6'
+
 
 
 # Use Unicorn as the app server
@@ -53,6 +55,8 @@ group :development, :test do
   gem "factory_girl_rails", "~> 4.0"
 
   gem 'capybara'
+
+  gem 'ffaker'
 
 end
 
