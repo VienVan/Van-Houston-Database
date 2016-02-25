@@ -1,15 +1,66 @@
 <div class='container user-show-page'>
 
-    <%= @user.email %>
-    <% if flash[:notice] %>
-    <%= flash[:notice] %>
-    <%end %>
 
-    <% if !current_user %>
-    <%= link_to "Login", sign_in_path %>
-    <% end %>
-
-    <% @user.students.each do |student| %>
-    <%= student.email %>
-    <% end %>
 </div>
+
+
+<table class = "table">
+   <caption>Teachers</caption>
+
+   <thead>
+      <tr>
+
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+
+
+      </tr>
+   </thead>
+
+   <tbody>
+
+      <tr>
+
+         <td><%=@user.first_name + ' ' + @user.last_name%></td>
+         <td><%=@user.email%></td>
+         <td><%=@user.phone%></td>
+      </tr>
+
+   </tbody>
+
+</table>
+
+<table class = "table">
+   <caption>Students</caption>
+
+   <thead>
+      <tr>
+
+          <th>Student's Name</th>
+          <th>Email</th>
+
+
+      </tr>
+   </thead>
+
+   <tbody>
+
+     <% @user.students.each do |student| %>
+      <tr>
+
+
+
+         <td><%= student.first_name%></td>
+         <td><%= student.email%></td>
+
+      </tr>
+      <% end%>
+
+   </tbody>
+
+</table>
+
+
+
+<%= link_to "New Teacher", "/users/new"%>

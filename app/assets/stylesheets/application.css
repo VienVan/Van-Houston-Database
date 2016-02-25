@@ -182,7 +182,7 @@ blockquote {
     font-size: 80px;
 }
 #whyUs {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url('/assets/headerBackground.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url('/assets/whyusbackground.jpg');
     background-size: cover;
     background-attachment: fixed;
 
@@ -221,5 +221,5 @@ blockquote {
 }
 
 .glow {
-  text-shadow: 0px 0px 10px white; 
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, .7);
 }
