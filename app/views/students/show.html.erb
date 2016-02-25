@@ -1,56 +1,43 @@
-<div class='container'>
-  <div class='row name'>
-    <div class='col-lg-12'>
-        <h3><%=@student.first_name + ' ' + @student.last_name%></h3>
-    </div>
-  </div>
-      <div class='row'>
-        <div class='col-lg-6'>
-            <div class='container'>
-                <div class='row'>
-                    <div class='col-md-3'>
-                          <p>Parent's Name: </p>
-                    </div>
-                    <div class='col-md-9'>
-                          <p><%=@student.parent_first_name + ' ' + @student.parent_last_name%></p>
-                    </div>
-                </div>
-                <div class='row'>
-                    <div class='col-md-3'>
-                          <p>Current School: </p>
-                    </div>
-                    <div class='col-md-9'>
-                          <p><%=@student.current_school%></p>
-                    </div>
-              </div>
-              <div class='row'>
-                    <div class='col-md-3'>
-                          <p>Email: </p>
-                    </div>
-                    <div class='col-md-9'>
-                          <p><%=@student.email%></p>
-                    </div>
-              </div>
-              <div class='row'>
-                    <div class='col-md-3'>
-                          <p>Grade Level: </p>
-                    </div>
-                    <div class='col-md-9'>
-                          <p><%=@student.grade_level%></p>
-                    </div>
-              </div>
 
-          </div>
-          </div>
-      <div class='col-lg-6 photo'>
+<table class="table">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Parent's Name</th>
+      <th>Current School</th>
+      <th>Grade Level</th>
+      <th>Email</th>
 
-        <%= image_tag @student.photo_url if @student.photo?%>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><%=@student.first_name%></td>
+      <td>Otto</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
 
-      </div>
-    </div>
 
-</div>
-</div>
 
   <%#= link_to "Edit", -%>
   <%= link_to "Edit", edit_student_path(@student), :class=>"btn btn-success"%>

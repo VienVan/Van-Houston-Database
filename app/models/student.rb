@@ -9,7 +9,11 @@ class Student < ActiveRecord::Base
       mount_uploader :photo, AvatarUploader
 
       def self.search(query)
-          where("last_name like ?", "%#{query}%") 
+          where("last_name like ?", "%#{query}%")
+          where("first_name like?", "%#{query}%")
+          where("email like?", "%#{query}%")
+          where("current_school like?", "%#{query}%")
+
         end
 
 end
