@@ -1,8 +1,11 @@
-<h1>edit page</h1>
+<div class='submit-button'>
+  <h1>edit page</h1>
+  <%= form_for @student do |f| %>
+  <%= f.text_field :email, placeholder: "Email" %>
 
-<%= form_for @student do |f| %>
-<%= f.text_field :email, placeholder: "Email" %>
+  <%= f.file_field :photo, placeholder: "Photo"%>
+  <%= f.submit "Update" %>
+  <% end %>
 
-<%= f.file_field :photo%>
-<%= f.submit "Update" %>
-<% end %>
+
+</div>

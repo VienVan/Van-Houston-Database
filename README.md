@@ -1,8 +1,5 @@
-
 #Van Houston Academy
 Van Houston Academy is an after-school program targeting First to Eight Grade. This website aims to help parents have more information about the after school program as well as allow teachers to log in and maintain student database.
-
-
 
 #Technologies
 1. Bootstrap
@@ -22,9 +19,11 @@ Van Houston Academy is an after-school program targeting First to Eight Grade. T
 #Bug
 1. Drop Down Nav-bar has restricted padding
 2. Contact Modal not yet functional
+3. When deployed to Heroku, images are not showing up.
 
 #Planning
-[Trello Board](https://trello.com/b/Hcx82oZ9/van-houston-database)
+1. [Trello Board](https://trello.com/b/Hcx82oZ9/van-houston-database)
+2. Balsamiq for wireframing.
 
 #How I feel after Rails
 ![](https://49.media.tumblr.com/d5d0e0cc61a9c61c2c22c4c8df7de059/tumblr_o320l4kaIy1r42sqeo1_400.gif)

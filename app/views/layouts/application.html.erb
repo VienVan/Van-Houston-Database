@@ -17,22 +17,23 @@
 </head>
 <body>
 <div class='navbar navbar-default navbar-fixed-top'>
-        <div class='container'>
-                <a href='/' class='navbar-brand'><img src='/assets/vanhoustonlogo.svg' id='brand-logo'>Van Houston Academy</a>
+
+                <a href="/" class="navbar-brand"><img src='/assets/vanhoustonlogo.svg' id='brand-logo'>Van Houston Academy</a>
                 <button class = 'navbar-toggle' data-toggle = 'collapse' data-target= '.navHeaderCollapse'>
                     <span class = 'icon-bar'></span>
                     <span class = 'icon-bar'></span>
                     <span class = 'icon-bar'></span>
                 </button>
-                <div class = 'collapse navbar-collapse navHeaderCollapse dropdown'>
+    
+        <div class = 'collapse navbar-collapse navHeaderCollapse dropdown'>
 
                             <ul class = 'nav navbar-nav navbar-right'>
                                     <li><%= link_to "Home", "/"%></li>
                                     <% if !current_user %>
 
                                     <li><a href='#contact'>Contact Us</a></li>
-                                    <li><a onClick="$('#login').modal()" href="#">Login</a></li>
                                     <li><a onClick="$('#new-student').modal()" href="#">Enroll</a></li>
+                                    <li><a onClick="$('#login').modal()" href="#">Login</a></li>
                                     <% end %>
                                     <% if current_user %>
                                     <li><a onClick="$('#new-student').modal()" href="#">Add New Student</a></li>
@@ -45,10 +46,10 @@
 
                             </ul>
                     </div>
-
-        </div>
 </div>
+
 <%= yield %>
+
 <div class="modal fade" id ='login' tabindex="-1" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -114,7 +115,7 @@
     </div>
 
 
-
+</div>
 
 <!-- Latest compiled and minified JS -->
 
