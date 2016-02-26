@@ -1,6 +1,6 @@
 #Van Houston Academy
 Van Houston Academy is an after-school program targeting First to Eight Grade. This website aims to help parents have more information about the after school program as well as allow teachers to log in and maintain student database.
-!image[](/assets/logo.png)
+![Van Houston Logo](https://scontent-iad3-1.xx.fbcdn.net/hphotos-xap1/t31.0-8/12291179_1484743985165093_2689728811524353458_o.jpg)
 
 
 #Technologies
