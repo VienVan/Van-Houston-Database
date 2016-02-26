@@ -1,20 +1,12 @@
+<div class='container student-show-page'>
 
-<div class='student-show-page'>
+<%= form_tag(students_path, :method => "get") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Students", class: "form-control", id: "search-form"%>
+<%= submit_tag "Search", :class => "btn btn-success"%>
+<% end %>
 
-
-  <%= form_tag(students_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Students" %>
-  <%= submit_tag "Search", :class => "btn btn-warning btn-group"%>
-  <% end %>
-  <%= link_to 'Back', :back, :class => "btn btn-default" %>
-
-  <button type="button" class="btn btn-info btn-group" data-toggle="modal" data-target="#new-student">
-    New Student
-  </button>
 
 </div>
-
-
 
 <table class="table table-striped">
   <thead>
@@ -26,8 +18,8 @@
       <th>Current School</th>
       <th>Grade Level</th>
       <th>Email</th>
-      <th>Edit</th>
       <th>Teacher</th>
+      <th>Edit</th>
 
     </tr>
   </thead>
@@ -42,11 +34,11 @@
       <td><%=student.grade_level%></td>
       <td><%=student.email%></td>
 
-      <td><%= link_to "Edit", edit_student_path(student), :class=>"btn btn-success"%></td>
-          <% student.users.each do |user|%>
+      <% student.users.each do |user|%>
       <td><%= user.first_name%></td>
 
-          <% end %>
+      <% end %>
+      <td><%= link_to "Edit", edit_student_path(student), :class=>"btn btn-info"%></td>
 
 </td>
     </tr>

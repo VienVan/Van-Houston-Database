@@ -13,13 +13,13 @@ class SessionsController < ApplicationController
             p "logged in"
             redirect_to "/users/#{@user.id}"
           else
-            redirect_to "/sign-in"
+            redirect_to "/"
           end
       end
 
       def destroy
           session.delete(:user_id)
-          redirect_to "/sign-in"
+          redirect_to "/"
       end
 
 end

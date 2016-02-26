@@ -18,19 +18,23 @@
 <body>
 <div class='navbar navbar-default navbar-fixed-top'>
         <div class='container'>
-                <a href='/' class='navbar-brand'>Van Houston Academy</a>
+                <a href='/' class='navbar-brand'><img src='/assets/vanhoustonlogo.svg' id='brand-logo'>Van Houston Academy</a>
                 <button class = 'navbar-toggle' data-toggle = 'collapse' data-target= '.navHeaderCollapse'>
                     <span class = 'icon-bar'></span>
                     <span class = 'icon-bar'></span>
                     <span class = 'icon-bar'></span>
                 </button>
                 <div class = 'collapse navbar-collapse navHeaderCollapse'>
-                    <div id="myScrollspy">
+
                             <ul class = 'nav navbar-nav navbar-right'>
                                     <li><%= link_to "Home", "/"%></li>
                                     <% if !current_user %>
                                     <li><%= link_to "Enroll", '/students/new'%></li>
-                                    <li><%= link_to "Log In", "/sign-in"%></li>
+
+
+                                    <li><a href='#contact'>Contact Us</a></li>
+                                    <li><a onClick="$('#login').modal()" href="#">Login</a></li>
+
                                     <% end %>
                                     <% if current_user %>
                                     <li><%= link_to "Add Students", '/students/new'%></li>
@@ -46,11 +50,35 @@
 
                             </ul>
                     </div>
-                </div>
+
         </div>
 </div>
 <%= yield %>
+<div class="modal fade" id ='login' tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
 
+        <%= form_for User.new, url: "/sessions", method: "post" do |f| %>
+          <div class='signin-field'>
+            <%= f.text_field :email, placeholder: "Email" %>
+          </div>
+          <div class='signin-field'>
+            <%= f.password_field :password, placeholder: "Password" %>
+          </div>
+          <%= f.submit "Sign In" %>
+
+        <% end %>
+
+
+        </div>
+
+
+      </div>
 
 
 <!-- Latest compiled and minified JS -->

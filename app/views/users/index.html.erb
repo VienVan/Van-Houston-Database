@@ -1,10 +1,38 @@
-<h1>User count is <%= User.count %></h1>
-<h1>Student count is <%= Student.count %></h1>
 
 
 
-<% @users.each do |user| %>
-<%= link_to user.email, user%><br />
-<% end %>
 
-  
+
+<ul>
+
+
+</ul>
+
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+          <% @users.each do |user| %>
+    <tr>
+
+      <td><a href='/users/<%= user.id%>'><%=user.first_name%></a></td>
+      <td><%=user.last_name%></td>
+      <td><%=user.email%></td>
+      <td><%=user.phone%></td>
+
+    </tr>
+          <% end %>
+  </tbody>
+</table>
+<div class='submit-button'>
+  <%= link_to "New Teacher", "/users/new", :class => "btn btn-success add-teacher"%>
+
+</div>

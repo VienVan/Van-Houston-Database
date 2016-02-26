@@ -5,9 +5,9 @@ class StudentsController < ApplicationController
           @students = Student.all
           @student = Student.new
           if params[:search]
-              @students = Student.search(params[:search]).order("first_name DESC")
+              @students = Student.search(params[:search]).order("first_name ASC")
           else
-              @students = Student.order("first_name DESC")
+              @students = Student.order("first_name ASC")
           end
       end
 
