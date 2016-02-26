@@ -27,4 +27,4 @@ Van Houston Academy is an after-school program targeting First to Eight Grade. T
 [Trello Board](https://trello.com/b/Hcx82oZ9/van-houston-database)
 
 #How I feel after Rails
-!(https://49.media.tumblr.com/d5d0e0cc61a9c61c2c22c4c8df7de059/tumblr_o320l4kaIy1r42sqeo1_400.gif)
+![](https://49.media.tumblr.com/d5d0e0cc61a9c61c2c22c4c8df7de059/tumblr_o320l4kaIy1r42sqeo1_400.gif)
