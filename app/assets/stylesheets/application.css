@@ -40,20 +40,7 @@ body {
 /********************************Imported css ****************/
 
 
-@media (max-width: 500px) {
-    body {
-        background: white;
-    }
-    .logo {
-        text-align: center;
-    }
-    .header {
-        display: none;
-    }
-    .successful-quote {
-       margin-top: 50px;
-    }
-}
+
 
 .header {
     padding-top: 40px;
@@ -234,4 +221,42 @@ blockquote {
   height: 30px;
   display: inline;
   margin-right: 15px;
+}
+
+@media (max-width: 500px) {
+    body {
+        background: white;
+    }
+    .container-fluid {
+      padding: none;
+    }
+    #about {
+      padding: 20px;
+    }
+    .logo {
+        text-align: center;
+    }
+    .header {
+        display: none;
+    }
+    .successful-quote {
+       background: white !important;
+    }
+    blockquote {
+      border: none;
+    }
+    #whyUs {
+      padding: 2px;
+      font-size: 10px;
+    }
+    .about-header {
+      font-size: 30px;
+    }
+    ul {
+      padding: 2px;
+    }
+    .dropdown {
+      padding: 2px;
+    }
+
 }
