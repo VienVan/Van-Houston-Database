@@ -1,4 +1,4 @@
-![Van Houston Logo](https://scontent-iad3-1.xx.fbcdn.net/hphotos-xap1/t31.0-8/12291179_1484743985165093_2689728811524353458_o.jpg =200x200)
+
 #Van Houston Academy
 Van Houston Academy is an after-school program targeting First to Eight Grade. This website aims to help parents have more information about the after school program as well as allow teachers to log in and maintain student database.
 
@@ -25,3 +25,6 @@ Van Houston Academy is an after-school program targeting First to Eight Grade. T
 
 #Planning
 [Trello Board](https://trello.com/b/Hcx82oZ9/van-houston-database)
+
+#How I feel after Rails
+!(https://49.media.tumblr.com/d5d0e0cc61a9c61c2c22c4c8df7de059/tumblr_o320l4kaIy1r42sqeo1_400.gif)

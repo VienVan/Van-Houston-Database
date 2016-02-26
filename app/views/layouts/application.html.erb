@@ -29,21 +29,16 @@
                             <ul class = 'nav navbar-nav navbar-right'>
                                     <li><%= link_to "Home", "/"%></li>
                                     <% if !current_user %>
-                                    <li><%= link_to "Enroll", '/students/new'%></li>
-
 
                                     <li><a href='#contact'>Contact Us</a></li>
                                     <li><a onClick="$('#login').modal()" href="#">Login</a></li>
-
+                                    <li><a onClick="$('#new-student').modal()" href="#">Enroll</a></li>
                                     <% end %>
                                     <% if current_user %>
-                                    <li><%= link_to "Add Students", '/students/new'%></li>
+                                    <li><a onClick="$('#new-student').modal()" href="#">Add New Student</a></li>
                                     <li><%= link_to "All Students", '/students'%></li>
                                     <li><%= link_to "Teacher's Access", '/users'%></li>
                                     <li><%= link_to "Log out", '/sessions', method: :delete %></li>
-
-
-
                                     <% end %>
 
 
@@ -59,9 +54,9 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Modal title</h4>
+        <h4 class="modal-title">Sign In</h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body sign-in-page">
 
         <%= form_for User.new, url: "/sessions", method: "post" do |f| %>
           <div class='signin-field'>
@@ -70,15 +65,55 @@
           <div class='signin-field'>
             <%= f.password_field :password, placeholder: "Password" %>
           </div>
-          <%= f.submit "Sign In" %>
+          <%= f.submit "Sign In", :class => "btn btn-success"%>
 
         <% end %>
 
 
         </div>
 
-
       </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id ='new-student' tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Sign In</h4>
+        </div>
+        <div class="modal-body sign-in-page">
+
+          <h1>Add New Student</h1>
+                <%= form_for Student.new do |f| %>
+
+                              <%= f.text_field :first_name, placeholder: "First Name"%><br />
+
+                              <%= f.text_field :last_name, placeholder: "Last Name"%><br />
+
+                              <%= f.text_field :parent_first_name, placeholder: "Parent's First Name"%><br />
+
+                              <%= f.text_field :parent_last_name, placeholder: "Parent's Last Name"%><br />
+
+                              <%= f.text_field :email, placeholder: "Email"%><br />
+
+                              <%= f.text_field :current_school, placeholder: "Current School"%><br />
+
+                              <%= f.collection_select :grade_level, Student::GRADE, :to_s, :to_s, :include_blank => true, placeholder: "Grade Level"%><br />
+                      <%= f.label :photo%>
+                      <%= f.file_field :photo%>
+                        <%= f.submit "Enroll" %>
+                      <% end %>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
 
 
 <!-- Latest compiled and minified JS -->
