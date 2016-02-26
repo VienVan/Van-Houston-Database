@@ -6,13 +6,13 @@ Van Houston Academy is an after-school program targeting First to Eight Grade. T
 #Technologies
 1. Bootstrap
 2. Ruby on Rails
-* Used partials to render the home page
-* Awesome_Print for rails console
-* CarrierWave to upload photos
-* MiniMagic to resize photos
+  * Used partials to render the home page
+  * Awesome_Print for rails console
+  * CarrierWave to upload photos
+  * MiniMagic to resize photos
 3. Rspec
-* Tested Views and Controllers
-* Used Factory Girl to synthesize data
+  * Tested Views and Controllers
+  * Used Factory Girl to synthesize data
 4. Hard Work
 5. Wine
 6. SVG
