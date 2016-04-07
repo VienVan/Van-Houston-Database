@@ -57,7 +57,7 @@ input {
     padding-top: 40px;
     height: 700px;
     position: relative;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('headerBackground.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/headerBackground.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -184,7 +184,7 @@ blockquote {
     font-size: 80px;
 }
 #whyUs {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url('/assets/whyusbackground.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url('/images/whyusbackground.jpg');
     background-size: cover;
     background-attachment: fixed;
 
