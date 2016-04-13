@@ -18,5 +18,3 @@ require 'ffaker'
 
       )
 end
-
-teacher = User.create([{username: 'teacher', password: '1234', email: 'teacher@teacher.com'}])
