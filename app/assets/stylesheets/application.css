@@ -55,7 +55,7 @@ input {
 
 .header {
     padding-top: 40px;
-    height: 700px;
+    height: 100vh;
     position: relative;
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/headerBackground.jpg');
     background-size: cover;
