@@ -34,9 +34,10 @@
                                     <li><a href='#contact'>Contact Us</a></li>
                                     <li><a onClick="$('#new-student').modal()" href="#">Enroll</a></li>
                                     <li><a onClick="$('#login').modal()" href="#">Login</a></li>
-                                    <!-- <% end %>
-                                    <% if current_user %> -->
                                     <li><a onClick="$('#new-student').modal()" href="#">Add New Student</a></li>
+                                    <% end %>
+                                    <% if current_user %>
+
                                     <li><%= link_to "All Students", '/students'%></li>
                                     <li><%= link_to "Teacher's Access", '/users'%></li>
                                     <li><%= link_to "Log out", '/sessions', method: :delete %></li>
