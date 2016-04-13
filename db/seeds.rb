@@ -15,6 +15,8 @@ require 'ffaker'
         parent_first_name: FFaker::Name.first_name,
         parent_last_name: FFaker::Name.last_name,
         current_school: FFaker::Name.name,
-      
+
       )
 end
+
+teacher = User.create([{username: 'teacher', password: '1234', email: 'teacher@teacher.com'}])
