@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>VanHoustonApp</title>
+  <title>Van Houston</title>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
@@ -17,37 +17,34 @@
 </head>
 <body>
 <div class='navbar navbar-default navbar-fixed-top'>
+    <div>
+    <a href="/" class="navbar-brand"><img src='/images/vanhoustonlogo.svg' id='brand-logo'> Van Houston Academy</a>
+    <button class = 'navbar-toggle' data-toggle='collapse' data-target= '.navHeaderCollapse'>
+        <span class = 'icon-bar'></span>
+        <span class = 'icon-bar'></span>
+        <span class = 'icon-bar'></span>
+    </button>
+    </div>
 
-                <a href="/" class="navbar-brand"><img src='/images/vanhoustonlogo.svg' id='brand-logo'>Van Houston Academy</a>
-                <button class = 'navbar-toggle' data-toggle = 'collapse' data-target= '.navHeaderCollapse'>
-                    <span class = 'icon-bar'></span>
-                    <span class = 'icon-bar'></span>
-                    <span class = 'icon-bar'></span>
-                </button>
+    <div class = 'collapse navbar-collapse navHeaderCollapse dropdown'>
+        <ul class = 'nav navbar-nav navbar-right'>
+          <li><%= link_to "Home", "/"%></li>
+          <% if !current_user %>
 
-        <div class = 'collapse navbar-collapse navHeaderCollapse dropdown'>
+          <li><a href='#contact'>Contact Us</a></li>
+          <li><a onClick="$('#new-student').modal()" href="#">Enroll</a></li>
+          <li><a onClick="$('#login').modal()" href="#">Login</a></li>
+          <% end %>
 
-                            <ul class = 'nav navbar-nav navbar-right'>
-                                    <li><%= link_to "Home", "/"%></li>
-                                    <% if !current_user %>
+          <% if current_user %>
+          <li><a onClick="$('#new-student').modal()" href="#">Add New Student</a></li>
+          <li><%= link_to "All Students", '/students'%></li>
+          <li><%= link_to "Log out", '/sessions', method: :delete %></li>
+          <li><%= link_to "Teacher's Access", '/users'%></li>
+          <% end %>
 
-                                    <li><a href='#contact'>Contact Us</a></li>
-                                    <li><a onClick="$('#new-student').modal()" href="#">Enroll</a></li>
-                                    <li><a onClick="$('#login').modal()" href="#">Login</a></li>
-                                    <li><%= link_to "Sign Up", '/users'%></li>
-                                    <% end %>
-                                    <% if current_user %>
-                                    <li><a onClick="$('#new-student').modal()" href="#">Add New Student</a></li>
-                                    <li><%= link_to "All Students", '/students'%></li>
-                                    <li><%= link_to "Log out", '/sessions', method: :delete %></li>
-                                    <li><%= link_to "Teacher's Access", '/users'%></li>
-
-                                    <% end %>
-
-
-
-                            </ul>
-                    </div>
+        </ul>
+    </div>
 </div>
 
 <%= yield %>
@@ -56,18 +53,17 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+
         <h4 class="modal-title">Sign In</h4>
       </div>
       <div class="modal-body sign-in-page">
 
-        <%= form_for User.new, url: "/sessions", method: "post" do |f| %>
-          <div class='signin-field'>
-            <%= f.text_field :email, placeholder: "Email" %>
-          </div>
-          <div class='signin-field'>
+        <%= bootstrap_form_for User.new, url: "/sessions", method: "post" do |f| %>
+
+            <%= f.email_field :email, placeholder: "Email" %>
+
             <%= f.password_field :password, placeholder: "Password" %>
-          </div>
+
           <%= f.submit "Sign In", :class => "btn btn-success"%>
 
         <% end %>
@@ -80,43 +76,41 @@
   </div>
 
 
-  <div class="modal fade" id ='new-student' tabindex="-1" role="dialog">
+<div class="modal fade" id='new-student' tabindex="-1" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title">Sign In</h4>
+
+          <h3 class="modal-title">Add New Student</h3>
         </div>
-        <div class="modal-body sign-in-page">
+        <div class="modal-body">
 
-          <h1>Add New Student</h1>
-                <%= form_for Student.new do |f| %>
+          <h4>Add New Student</h4>
+          <%= bootstrap_form_for Student.new do |f| %>
 
-                              <%= f.text_field :first_name, placeholder: "First Name"%><br />
+          <%= f.text_field :first_name, placeholder: "First Name"%><br />
 
-                              <%= f.text_field :last_name, placeholder: "Last Name"%><br />
+          <%= f.text_field :last_name, placeholder: "Last Name"%><br />
 
-                              <%= f.text_field :parent_first_name, placeholder: "Parent's First Name"%><br />
+          <%= f.text_field :parent_first_name, placeholder: "Parent's First Name"%><br />
 
-                              <%= f.text_field :parent_last_name, placeholder: "Parent's Last Name"%><br />
+          <%= f.text_field :parent_last_name, placeholder: "Parent's Last Name"%><br />
 
-                              <%= f.text_field :email, placeholder: "Email"%><br />
+          <%= f.text_field :email, placeholder: "Email"%><br />
 
-                              <%= f.text_field :current_school, placeholder: "Current School"%><br />
+          <%= f.text_field :current_school, placeholder: "Current School"%><br />
 
-                              <%= f.collection_select :grade_level, Student::GRADE, :to_s, :to_s, :include_blank => true, placeholder: "Grade Level"%><br />
-                      <%= f.label :photo%>
-                      <%= f.file_field :photo%>
-                        <%= f.submit "Enroll" %>
-                      <% end %>
+          <%= f.collection_select :grade_level, Student::GRADE, :to_s, :to_s, :include_blank => true, placeholder: "Grade Level"%><br />
+
+          <%= f.file_field :photo%>
+          <%= f.submit "Enroll" %>
+          <% end %>
 
           </div>
 
         </div>
       </div>
     </div>
-
-
 </div>
 
 <!-- Latest compiled and minified JS -->
